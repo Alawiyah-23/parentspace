@@ -30,7 +30,7 @@ nav a:hover{background:var(--c3);color:var(--ink)}
 .hero p{color:var(--mute);font-size:1.1rem;max-width:520px}
 .btn{display:inline-block;background:var(--brand);color:#fff;font-weight:700;padding:13px 24px;border-radius:99px;margin-top:10px;border:0;cursor:pointer;font:inherit;font-weight:700}
 .feat{background:linear-gradient(135deg,#f6a65f,#e8663d);border-radius:28px;padding:32px;color:#fff;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
-.feat:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,0) 65%),url(family.jpg) center/cover;opacity:.5;z-index:0}
+.feat:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,0) 65%),url(keluarga.jpg) center/cover;opacity:.5;z-index:0}
 .feat>*{position:relative;z-index:1}
 .feat small{opacity:.9;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 .feat h2{font-size:1.6rem;margin:8px 0}
@@ -118,7 +118,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </section>
 </main>
 
-<footer><div class="wrap"><div><b class="logo" style="font-size:1.1rem">ParentSpace</b><br>Tumbuh bersama, satu keluarga sekali waktu.<br>Parentspace Team:<br>Alawiyah Mutmainnah<br>Muhammad Fauzan Al Ghifari<br>Fathiya Hanin Zahrani Qolbi<br>Nova Ayu Elysia<br>Azmi Karima Salsabilla</div><div>Pendidikan · Keuangan · Parent Story · Kesehatan · Parenting<br>© 2026 ParentSpace</div></div></footer>
+<footer><div class="wrap"><div><b class="logo" style="font-size:1.1rem">ParentSpace</b><br>Tumbuh bersama, satu keluarga sekali waktu.<br>ParentSpace Team<br>Alawiyah Mutmainnah<br>Fathiya Hanin</div><div>Pendidikan · Keuangan · Parent Story · Kesehatan · Parenting<br>© 2026 ParentSpace</div></div></footer>
 
 <script>
 var cats={"Pendidikan":["📚","var(--c1)"],"Keuangan":["💰","var(--c2)"],"Parent Story":["💬","var(--c5)"],"Kesehatan":["🩺","var(--c4)"],"Parenting":["🧸","var(--c3)"]};
@@ -126,7 +126,7 @@ var posts=[
 ["Pendidikan","Memilih Sekolah: Jangan Hanya Lihat Akreditasi","Panduan menilai sekolah yang cocok dengan karakter anak dan nilai keluarga.","5 mnt"],
 ["Keuangan","Dana Pendidikan Anak: Mulai dari Nominal Kecil","Cara menyusun tabungan jangka panjang tanpa mengganggu kebutuhan harian.","7 mnt"],
 ["Parent Story","Saat Saya Resign Demi Anak, Apa yang Saya Rasakan?","Kisah jujur seorang ibu tentang pilihan sulit dan pelajaran yang menyertainya.","8 mnt"],
-["Kesehatan","Kenali Tanda Burnout pada Orang Tua Baru","Kelelahan itu nyata. Kapan harus istirahat dan kapan mencari bantuan.","6 mnt"],
+["Kesehatan","Tren Cut Sugar pada Anak, Seberapa Penting Pembatasan Gula Sejak Dini?","Batas gula tambahan menurut WHO dan AAP, serta cara menerapkannya tanpa melarang anak.","4 mnt","artikel-1.pdf"],
 ["Parenting","Membatasi Gadget Tanpa Drama di Rumah","Aturan sederhana yang bisa disepakati bersama anak.","5 mnt"],
 ["Pendidikan","Anak Malas Belajar? Mungkin Ini Penyebabnya","Memahami gaya belajar dan motivasi anak sebelum memarahinya.","6 mnt"],
 ["Keuangan","Gaji Pas-pasan, Keluarga Tetap Aman: Atur Anggaran 50/30/20","Contoh simulasi anggaran bulanan untuk keluarga muda.","7 mnt"],
@@ -137,7 +137,7 @@ var cur="Semua",tabs=document.getElementById("tabs"),grid=document.getElementByI
 function render(){
  tabs.innerHTML=["Semua"].concat(Object.keys(cats)).map(function(c){return '<button class="tab'+(c===cur?' on':'')+'" data-c="'+c+'">'+c+'</button>'}).join("");
  grid.innerHTML=posts.filter(function(p){return cur==="Semua"||p[0]===cur}).map(function(p){
-  var c=cats[p[0]];return '<article class="post"><div class="thumb" style="background:'+c[1]+'">'+c[0]+'</div><div class="pb"><span class="tag">'+p[0]+'</span><h3>'+p[1]+'</h3><p>'+p[2]+'</p><div class="meta">Tim ParentSpace · '+p[3]+' baca</div></div></article>'}).join("");
+  var c=cats[p[0]];return '<a class="post" href="'+(p[4]||'#terbaru')+'"'+(p[4]?' target="_blank" rel="noopener"':'')+'><div class="thumb" style="background:'+c[1]+'">'+c[0]+'</div><div class="pb"><span class="tag">'+p[0]+'</span><h3>'+p[1]+'</h3><p>'+p[2]+'</p><div class="meta">Tim ParentSpace · '+p[3]+' baca</div></div></a>'}).join("");
 }
 tabs.addEventListener("click",function(e){var c=e.target.getAttribute("data-c");if(c){cur=c;render()}});
 document.querySelectorAll("[data-f]").forEach(function(a){a.addEventListener("click",function(){var f=a.getAttribute("data-f");if(f!=="Parent Story"){cur=f;render()}})});
