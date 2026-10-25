@@ -30,8 +30,11 @@ nav a:hover{background:var(--c3);color:var(--ink)}
 .hero p{color:var(--mute);font-size:1.1rem;max-width:520px}
 .btn{display:inline-block;background:var(--brand);color:#fff;font-weight:700;padding:13px 24px;border-radius:99px;margin-top:10px;border:0;cursor:pointer;font:inherit;font-weight:700}
 .feat{background:linear-gradient(135deg,#f6a65f,#e8663d);border-radius:28px;padding:32px;color:#fff;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
-.feat:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,0) 65%),url(family.jpg) center/cover;opacity:.5;z-index:0}
-.feat>*{position:relative;z-index:1}
+.feat:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,0) 65%),var(--img) center/cover;opacity:.5;z-index:0;transition:.5s}
+.feat a{color:#fff;display:block}
+.dots{display:flex;gap:8px;margin-top:16px}
+.dots button{width:10px;height:10px;border-radius:99px;border:0;padding:0;background:rgba(255,255,255,.5);cursor:pointer;transition:.3s}
+.dots button.on{width:26px;background:#fff}.feat>*{position:relative;z-index:1}
 .feat small{opacity:.9;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 .feat h2{font-size:1.6rem;margin:8px 0}
 .rubrik{padding:20px 0 10px}
@@ -86,17 +89,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <p>Cerita, panduan, dan solusi nyata seputar anak, rumah tangga, dan kehidupan orang tua. Karena menjadi orang tua tidak harus dijalani sendirian.</p>
 <a class="btn" href="#terbaru">Mulai Membaca</a>
 </div>
-<a class="feat" href="#terbaru"><small>Pilihan Editor · Parenting</small><h2>Anak Sulit Diatur? 7 Cara Membangun Komunikasi Tanpa Teriak</h2><span>Baca 6 menit →</span></a>
+<div class="feat" id="feat">
+<a id="fl" href="artikel-1.html"><small id="fs"></small><h2 id="ft"></h2><span id="fm"></span></a>
+<div class="dots" id="dots"></div>
 </section>
 
 <section class="rubrik" id="rubrik">
 <h2>Jelajahi Rubrik</h2><p class="sub">Lima topik yang paling dekat dengan keseharian keluarga.</p>
 <div class="rgrid">
-<a class="rc" style="background:var(--c1)" href="#terbaru" data-f="Pendidikan"><i>📚</i><b>Pendidikan</b><small>Sekolah, belajar, dan tumbuh kembang</small></a>
-<a class="rc" style="background:var(--c2)" href="#terbaru" data-f="Keuangan"><i>💰</i><b>Keuangan</b><small>Anggaran, tabungan, dana pendidikan</small></a>
-<a class="rc" style="background:var(--c5)" href="#story" data-f="Parent Story"><i>💬</i><b>Parent Story</b><small>Kisah nyata dari sesama orang tua</small></a>
-<a class="rc" style="background:var(--c4)" href="#terbaru" data-f="Kesehatan"><i>🩺</i><b>Kesehatan</b><small>Fisik dan mental, anak dan orang tua</small></a>
-<a class="rc" style="background:var(--c3)" href="#terbaru" data-f="Parenting"><i>🧸</i><b>Parenting</b><small>Pola asuh dan hubungan keluarga</small></a>
+<!-- Baris 94 --> <a class="rc" style="background: var(--c1);" href="#terbaru" data-f="Pendidikan"><b>Pendidikan</b><small>Sekolah, belajar, dan tumbuh kembang</small></a>
+<!-- Baris 95 --> <a class="rc" style="background: var(--c2);" href="#terbaru" data-f="Keuangan"><b>Keuangan</b><small>Anggaran, tabungan, dana pendidikan</small></a>
+<!-- Baris 96 --> <a class="rc" style="background: var(--c3);" href="#terbaru" data-f="Parent Story"><b>Parent Story</b><small>Kisah nyata dari sesama orang tua</small></a>
+<!-- Baris 97 --> <a class="rc" style="background: var(--c4);" href="#terbaru" data-f="Kesehatan"><b>Kesehatan</b><small>Fisik dan mental, anak dan orang tua</small></a>
+<!-- Baris 98 --> <a class="rc" style="background: var(--c5);" href="#terbaru" data-f="Parenting"><b>Parenting</b><small>Pola asuh dan hubungan keluarga</small></a>
 </div></section>
 
 <section class="sec" id="terbaru">
@@ -107,7 +112,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <section class="story" id="story">
 <div><span class="kicker">Parent Story</span><h2 style="font-size:1.8rem;margin-top:14px">Setiap keluarga punya cerita.</h2><p class="sub">Ruang berbagi pengalaman jujur, tanpa menghakimi.</p><a class="btn" href="#newsletter">Kirim Ceritamu</a></div>
-<div><q>“Dulu saya merasa gagal karena anak saya tantrum di tempat umum. Ternyata, saya hanya butuh belajar mendengar, bukan menenangkan dengan cepat.”</q><div class="who">— Rina, ibu dua anak, Bandung</div></div>
+<div><q>“Di balik lelahnya orang tua, ada cinta yang terus bekerja dalam diam.”</q><div class="who">— M Fauzan Al Ghifari, dari artikel “Di Balik Lelahnya Orang Tua, Ada Cinta yang Tak Pernah Meminta Balasan”</div></div>
 </section>
 
 <section class="news" id="newsletter">
@@ -118,26 +123,86 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </section>
 </main>
 
-<footer><div class="wrap"><div><b class="logo" style="font-size:1.1rem">ParentSpace</b><br>Tumbuh bersama, satu keluarga sekali waktu.<br>ParentSpace Team<br>Alawiyah Mutmainnah<br>Fathiya Hanin</div><div>Pendidikan · Keuangan · Parent Story · Kesehatan · Parenting<br>© 2026 ParentSpace</div></div></footer>
+<footer>
+  <div class="wrap" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; width: 100%;">
+    
+    <!-- KOLOM 1: Kiri (Logo dan Tagline) -->
+    <div style="flex: 1;">
+      <b><a class="logo" style="font-size:1.1rem">ParentSpace</a></b>
+      <br>
+      <span style="font-size: 0.9rem; opacity: 0.8;">Tumbuh bersama, satu keluarga sekali waktu.</span>
+      <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.6;">© 2026 ParentSpace</p>
+    </div>
+
+    <!-- KOLOM 2: Tengah (About Us) -->
+    <div style="flex: 1; text-align: left;">
+      <b style="font-size: 1rem; display: block; margin-bottom: 8px;">About Us</b>
+      <span style="font-size: 0.9rem; line-height: 1.6; opacity: 0.8; display: block;">
+        Alawiyah Mutmainnah<br>
+        Fathiya Hanin Zahrani Qolbi<br>
+        Nova Ayu Elysia<br>
+        Azmi Karima Salsabilla<br>
+        M Fauzan Al Ghifari
+      </span>
+    </div>
+
+    <!-- KOLOM 3: Kanan (Daftar Kategori) -->
+    <div style="flex: 1; text-align: left; font-size: 0.9rem; line-height: 1.6; opacity: 0.8;">
+      Pendidikan · Keuangan · Parent Story<br>
+      Kesehatan · Parenting
+    </div>
+
+  </div>
+</footer>
 
 <script>
+var slides=[
+{s:"Pilihan Editor · Kesehatan",t:"Tren Cut Sugar pada Anak: Batas Gula Tambahan yang Aman",m:"Baca 5 menit →",l:"artikel-1.html",i:"artikel-1.jpg"},
+{s:"Pilihan Editor · Parenting",t:"Ketika Waktu Menjadi Kemewahan: Perjuangan Orang Tua di Tengah Kesibukan",m:"Baca 5 menit →",l:"artikel-2.html",i:"artikel-2.jpg"},
+{s:"Pilihan Editor · Parent Story",t:"Di Balik Lelahnya Orang Tua, Ada Cinta yang Tak Pernah Meminta Balasan",m:"Baca 3 menit →",l:"artikel-9.html",i:"artikel-9.jpg"},
+{s:"Pilihan Editor · Parenting",t:"Rumah Seharusnya Jadi Tempat Aman, Balita di Bandung Justru Terluka akibat Konflik Orang Tua",m:"Baca 3 menit →",l:"artikel-3.html",i:"artikel-3.jpg"},
+{s:"Pilihan Editor · Keuangan",t:"Gaji Cepat Habis sebelum Akhir Bulan? Ini Cara Keluarga Mengatur Uang di Tengah Biaya Hidup",m:"Baca 4 menit →",l:"artikel-4.html",i:"artikel-4.jpg"},
+{s:"Pilihan Editor · Pendidikan",t:"Anak Malas Belajar di Rumah? Ini Cara Orang Tua Mendampingi Tanpa Harus Marah-Marah",m:"Baca 3 menit →",l:"artikel-5.html",i:"artikel-5.jpg"},
+{s:"Pilihan Editor · Kesehatan",t:"Anak Terlalu Lama Bermain Gadget, Apa Dampaknya bagi Kesehatan?",m:"Baca 5 menit →",l:"artikel-6.html",i:"artikel-6.jpg"},
+{s:"Pilihan Editor · Keuangan",t:"Dana Darurat Keluarga: Berapa yang Perlu Disiapkan Orang Tua?",m:"Baca 3 menit →",l:"artikel-7.html",i:"artikel-7.jpg"},
+{s:"Pilihan Editor · Pendidikan",t:"Literasi Dini Bukan Calistung: Cerita Guru Muda PAUD di Tasikmalaya",m:"Baca 5 menit →",l:"artikel-8.html",i:"artikel-8.jpg"},
+{s:"Pilihan Editor · Parent Story",t:"Ketika Orang Tua Menua, Apakah Kita Masih Punya Waktu untuk Mereka?",m:"Baca 4 menit →",l:"artikel-10.html",i:"artikel-10.jpg"}
+];
+var fi=0,tm=null;
+function showSlide(n){
+ fi=(n+slides.length)%slides.length;var s=slides[fi];
+ document.getElementById("fs").textContent=s.s;
+ document.getElementById("ft").textContent=s.t;
+ document.getElementById("fm").textContent=s.m;
+ document.getElementById("fl").href=s.l;
+ document.getElementById("feat").style.setProperty("--img","url("+s.i+")");
+ var d=document.getElementById("dots").children;
+ for(var k=0;k<d.length;k++){d[k].className=k===fi?"on":""}
+}
+function startSlide(){clearInterval(tm);tm=setInterval(function(){showSlide(fi+1)},5000)}
+var dh="";slides.forEach(function(s,k){dh+='<button aria-label="Slide '+(k+1)+'" data-k="'+k+'"></button>'});
+document.getElementById("dots").innerHTML=dh;
+document.getElementById("dots").addEventListener("click",function(e){var k=e.target.getAttribute("data-k");if(k!==null){showSlide(+k);startSlide()}});
+showSlide(0);startSlide();
 var cats={"Pendidikan":["📚","var(--c1)"],"Keuangan":["💰","var(--c2)"],"Parent Story":["💬","var(--c5)"],"Kesehatan":["🩺","var(--c4)"],"Parenting":["🧸","var(--c3)"]};
 var posts=[
-["Pendidikan","Memilih Sekolah: Jangan Hanya Lihat Akreditasi","Panduan menilai sekolah yang cocok dengan karakter anak dan nilai keluarga.","5 mnt"],
-["Keuangan","Dana Pendidikan Anak: Mulai dari Nominal Kecil","Cara menyusun tabungan jangka panjang tanpa mengganggu kebutuhan harian.","7 mnt"],
-["Parent Story","Saat Saya Resign Demi Anak, Apa yang Saya Rasakan?","Kisah jujur seorang ibu tentang pilihan sulit dan pelajaran yang menyertainya.","8 mnt"],
-["Kesehatan","Tren Cut Sugar pada Anak, Seberapa Penting Pembatasan Gula Sejak Dini?","Batas gula tambahan menurut WHO dan AAP, serta cara menerapkannya tanpa melarang anak.","4 mnt","artikel-1.html"],
-["Parenting","Membatasi Gadget Tanpa Drama di Rumah","Aturan sederhana yang bisa disepakati bersama anak.","5 mnt"],
-["Pendidikan","Anak Malas Belajar? Mungkin Ini Penyebabnya","Memahami gaya belajar dan motivasi anak sebelum memarahinya.","6 mnt"],
-["Keuangan","Gaji Pas-pasan, Keluarga Tetap Aman: Atur Anggaran 50/30/20","Contoh simulasi anggaran bulanan untuk keluarga muda.","7 mnt"],
-["Kesehatan","Panduan Imunisasi Anak yang Perlu Dicek Ulang","Jadwal dasar dan hal yang perlu ditanyakan ke dokter anak.","6 mnt"],
-["Parent Story","Ayah Juga Bisa Lelah: Cerita dari Seorang Ayah Tunggal","Menjalani peran ganda dengan dukungan komunitas kecil.","9 mnt"]
+["Pendidikan","Literasi Dini Bukan Calistung: Cerita Guru Muda PAUD di Tasikmalaya","Kisah guru PAUD muda soal motorik, belajar sambil bermain, dan cara menenangkan orang tua yang cemas soal calistung.","5 mnt","artikel-8.html","artikel-8.jpg"],
+["Keuangan","Gaji Cepat Habis sebelum Akhir Bulan? Ini Cara Keluarga Mengatur Uang di Tengah Biaya Hidup","Cara sederhana mencatat pengeluaran, memisahkan kebutuhan dari keinginan, dan menabung sejak awal bulan.","4 mnt","artikel-4.html","artikel-4.jpg"],
+["Parent Story","Di Balik Lelahnya Orang Tua, Ada Cinta yang Tak Pernah Meminta Balasan","Refleksi tentang perjuangan ayah dan ibu yang sering baru disadari ketika anak beranjak dewasa.","3 mnt","artikel-9.html","artikel-9.jpg"],
+["Kesehatan", "Tren Cut Sugar pada Anak: Batas Gula Tambahan yang Aman", "Pembahasan tentang pentingnya membatasi konsumsi gula pada anak sejak dini.", "5 mnt", "artikel-1.html", "artikel-1.jpg"],
+["Parenting", "Ketika Waktu Menjadi Kemewahan: Perjuangan Orang Tua di Tengah Kesibukan", "Kisah seorang ibu pekerja yang belajar hadir untuk anak lewat perhatian-perhatian kecil.", "5 mnt", "artikel-2.html", "artikel-2.jpg"],
+["Kesehatan","Anak Terlalu Lama Bermain Gadget, Apa Dampaknya bagi Kesehatan?","Dampak waktu layar berlebihan menurut AAP dan WHO, serta cara membatasinya tanpa terus melarang.","5 mnt","artikel-6.html","artikel-6.jpg"],
+["Pendidikan","Anak Malas Belajar di Rumah? Ini Cara Orang Tua Mendampingi Tanpa Harus Marah-Marah","Cara menyiapkan area belajar, menyusun jadwal, dan mendampingi anak dengan empati.","3 mnt","artikel-5.html","artikel-5.jpg"],
+["Keuangan","Dana Darurat Keluarga: Berapa yang Perlu Disiapkan Orang Tua?","Panduan OJK soal besaran dana darurat keluarga, ciri-cirinya, dan cara mulai menyiapkannya dari nominal kecil.","3 mnt","artikel-7.html","artikel-7.jpg"],
+["Parenting","Rumah Seharusnya Jadi Tempat Aman, Balita di Bandung Justru Terluka akibat Konflik Orang Tua","Balita di Margaasih terluka akibat serpihan kaca saat ayahnya mengamuk; polisi masih mendalami motifnya.","3 mnt","artikel-3.html","artikel-3.jpg"],
+["Parent Story","Ketika Orang Tua Menua, Apakah Kita Masih Punya Waktu untuk Mereka?","Refleksi tentang menjaga kedekatan dengan orang tua yang bertambah usia di tengah kesibukan anak.","4 mnt","artikel-10.html","artikel-10.jpg"]
 ];
+
 var cur="Semua",tabs=document.getElementById("tabs"),grid=document.getElementById("grid");
 function render(){
  tabs.innerHTML=["Semua"].concat(Object.keys(cats)).map(function(c){return '<button class="tab'+(c===cur?' on':'')+'" data-c="'+c+'">'+c+'</button>'}).join("");
  grid.innerHTML=posts.filter(function(p){return cur==="Semua"||p[0]===cur}).map(function(p){
-  var c=cats[p[0]];return '<a class="post" href="'+(p[4]||'#terbaru')+'"'+(p[4]?'':'')+'><div class="thumb" style="background:'+c[1]+'">'+c[0]+'</div><div class="pb"><span class="tag">'+p[0]+'</span><h3>'+p[1]+'</h3><p>'+p[2]+'</p><div class="meta">Tim ParentSpace · '+p[3]+' baca</div></div></a>'}).join("");
+  var c=cats[p[0]];return '<a class="post" href="'+(p[4]||'#terbaru')+'"><div class="thumb" style="background:'+(p[5]?'url('+p[5]+') center/cover':c[1])+'"></div><div class="pb"><span class="tag">'+p[0]+'</span><h3>'+p[1]+'</h3><p>'+p[2]+'</p><div class="meta">Tim ParentSpace · '+p[3]+' baca</div></div></a>'}).join("");
 }
 tabs.addEventListener("click",function(e){var c=e.target.getAttribute("data-c");if(c){cur=c;render()}});
 document.querySelectorAll("[data-f]").forEach(function(a){a.addEventListener("click",function(){var f=a.getAttribute("data-f");if(f!=="Parent Story"){cur=f;render()}})});
